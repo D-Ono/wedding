@@ -24,3 +24,43 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5rem; /* Desktop */
+  white-space: nowrap;
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.8rem;
+    white-space: normal; /* permite quebrar linha se necessário */
+    text-align: center;  /* opcional: melhora no mobile */
+  }
+
+  .mobile-image {
+    width: 140px;
+  }
+}
+
+h4 {
+  font-family: 'Montserrat';
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+
+  margin-bottom: 24px;
+}
+
+p {
+  font-family: 'Montserrat';
+  color: #4b565d;
+}

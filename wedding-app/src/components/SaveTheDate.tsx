@@ -1,0 +1,95 @@
+'use client'
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
+export const SaveTheDate = () => {
+  const [time, setTime] = useState({
+    months: 0,
+    days: 0,
+    hours: 0,
+    minutes: 0,
+  });
+
+  useEffect(() => {
+    const weddingDay = new Date("2026-03-07T17:00:00");
+
+    const calculate = () => {
+      const now = new Date();
+
+      let months =
+        (weddingDay.getFullYear() - now.getFullYear()) * 12 +
+        (weddingDay.getMonth() - now.getMonth());
+
+      if (weddingDay.getDate() < now.getDate()) {
+        months--;
+      }
+
+      const monthAdjustedDate = new Date(now);
+      monthAdjustedDate.setMonth(monthAdjustedDate.getMonth() + months);
+
+      let remainingMs = weddingDay.getTime() - monthAdjustedDate.getTime();
+
+      const days = Math.floor(remainingMs / (1000 * 60 * 60 * 24));
+      remainingMs -= days * (1000 * 60 * 60 * 24);
+
+      const hours = Math.floor(remainingMs / (1000 * 60 * 60));
+      remainingMs -= hours * (1000 * 60 * 60);
+
+      const minutes = Math.floor(remainingMs / (1000 * 60));
+
+      setTime({ months, days, hours, minutes });
+    };
+
+    calculate();
+    const interval = setInterval(calculate, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+
+    return (
+        <section className="flex items-center flex-col px-md">
+          <h4>Salve a data</h4>
+          <p className="text-center">
+            07 de Março de 2026 - 16h30
+            <br />
+            Paróquia São Judas Tadeu - Presidente Prudente
+            <br />
+          </p>
+          <br />
+          <div className="
+            bg-[#6A8DBB] text-white px-6 md:px-8 py-4 rounded-xl 
+            flex items-center gap-4 md:gap-6
+          ">
+            <div className="flex flex-col items-center">
+              <span className="text-3xl font-bold">{time.months}</span>
+              <span className="text-sm text-neutral-300">Meses</span>
+            </div>
+
+            {/* Divider */}
+            <div className="h-10 w-px bg-neutral-600"></div>
+            <div className="flex flex-col items-center">
+              <span className="text-3xl font-bold">{time.days}</span>
+              <span className="text-sm text-neutral-300">Dias</span>
+            </div>
+
+            <div className="w-full h-px bg-neutral-600 md:h-10 md:w-px"></div>
+
+            <div className="flex flex-col items-center">
+              <span className="text-3xl font-bold">{time.hours}</span>
+              <span className="text-sm text-neutral-300">Horas</span>
+            </div>
+
+            <div className="w-full h-px bg-neutral-600 md:h-10 md:w-px"></div>
+
+            <div className="flex flex-col items-center">
+              <span className="text-3xl font-bold">{time.minutes}</span>
+              <span className="text-sm text-neutral-300">Minutos</span>
+            </div>
+          </div>
+          <br />
+
+          <Image src='/img/parque.png' alt="Foto no parque" width={600} height={400} style={{ paddingLeft: '10px', paddingRight: '10px', borderRadius: '20px' }} />
+        </section>
+    )
+}
