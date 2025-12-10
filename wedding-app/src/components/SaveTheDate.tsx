@@ -11,7 +11,7 @@ export const SaveTheDate = () => {
   });
 
   useEffect(() => {
-    const weddingDay = new Date("2026-03-07T17:00:00");
+    const weddingDay = new Date("2026-03-07T16:30:00");
 
     const calculate = () => {
       const now = new Date();
@@ -20,7 +20,7 @@ export const SaveTheDate = () => {
         (weddingDay.getFullYear() - now.getFullYear()) * 12 +
         (weddingDay.getMonth() - now.getMonth());
 
-      if (weddingDay.getDate() < now.getDate()) {
+      if (weddingDay.getDate() <= now.getDate()) {
         months--;
       }
 
@@ -89,7 +89,7 @@ export const SaveTheDate = () => {
           </div>
           <br />
 
-          <Image src='/img/parque.png' alt="Foto no parque" width={600} height={400} style={{ paddingLeft: '10px', paddingRight: '10px', borderRadius: '20px' }} />
+          <Image src='/img/igreja_maringa.png' alt="Foto no parque" width={600} height={400} style={{ paddingLeft: '10px', paddingRight: '10px', borderRadius: '20px' }} />
         </section>
     )
 }

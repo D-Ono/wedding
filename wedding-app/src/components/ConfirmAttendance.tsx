@@ -4,7 +4,8 @@ export const ConfirmAttendance = () => {
         <section>
           <h4>Confirmação de presença</h4>
           <p className="text-center">
-            Para nos ajudar a manter o casamento organizado e o controle de convidados, <br/> por favor confirme sua presença até o dia 20/02/2026!
+            Sua presença é muito importante para nós, ajude-nos a planejar este dia <br />
+            especial confirmando sua presença até 20/02/2026.
           </p>
           <div className="flex items-center justify-center pt-4">
             <a

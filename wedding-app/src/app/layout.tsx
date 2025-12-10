@@ -19,7 +19,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Casamento - Jéssica David",
-  description: "Site criado para o casamento de Jéssica e David",
+  description: "Site criado para o casamento de Jéssica e David"
 };
 
 export default function RootLayout({
