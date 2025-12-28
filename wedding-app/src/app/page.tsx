@@ -1,6 +1,7 @@
 import { Banner } from "@/components/Banner";
 import { ConfirmAttendance } from "@/components/ConfirmAttendance";
 import { Galery } from "@/components/Galery";
+import { GeneralInfo } from "@/components/GeneralInfo";
 import { SaveTheDate } from "@/components/SaveTheDate";
 import { WeddingRegistry } from "@/components/WeddingRegistry";
 import Image from "next/image";
@@ -12,7 +13,7 @@ export default function Home() {
       <main className="flex min-h-screen w-full flex-col items-center gap-8 mb-8 sm:items-start justify-center">
         <Banner />
         <div className="flex flex-col items-center w-full gap-8">
-          {/* <GeneralInfo />  */}
+          <GeneralInfo /> 
           <SaveTheDate />
           <WeddingRegistry />
           <ConfirmAttendance />

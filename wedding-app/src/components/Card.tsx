@@ -15,7 +15,7 @@ export const Card = ({
     prata: "R$ 200,00",
     ouro: "R$ 400,00",
     platina: "R$ 800,00",
-    diamante: "R$ 1000,00",
+    diamante: "R$ 1.000,00",
   }[type];
 
   const title = {
