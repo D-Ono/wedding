@@ -6,7 +6,7 @@ import Image from "next/image";
 export const Card = ({
   type,
 }: {
-  type: "bronze" | "prata" | "ouro" | "platina" | "diamante";
+  type: "bronze" | "prata" | "ouro" | "platina" | "diamante" | "personalizado";
 }) => {
   const [showTooltip, setShowTooltip] = useState(false);
 
@@ -16,6 +16,7 @@ export const Card = ({
     ouro: "R$ 400,00",
     platina: "R$ 800,00",
     diamante: "R$ 1.000,00",
+    personalizado: "Escolha o valor :)",
   }[type];
 
   const title = {
@@ -24,6 +25,7 @@ export const Card = ({
     ouro: "Ouro",
     platina: "Platina",
     diamante: "Diamante",
+    personalizado: "Personalizado",
   }[type];
 
   const image = {
@@ -32,6 +34,7 @@ export const Card = ({
     ouro: "/trophy-gold.svg",
     platina: "/trophy-platinum.svg",
     diamante: "/trophy-diamond.svg",
+    personalizado: "/img/rings.png",
   }[type];
 
   const colorClass = {
@@ -40,6 +43,7 @@ export const Card = ({
     ouro: "text-[#CFAF3C]",
     platina: "text-[#B5B5B5]",
     diamante: "text-[#4DC4D7]",
+    personalizado: "text-[#CFAF3C]",
   }[type];
 
   const gradientBg = {
@@ -48,6 +52,7 @@ export const Card = ({
     ouro: "from-[#CFAF3C]/5 to-transparent",
     platina: "from-[#B5B5B5]/5 to-transparent",
     diamante: "from-[#4DC4D7]/5 to-transparent",
+    personalizado: "from-[#CFAF3C]/5 to-transparent",
   }[type];
 
   const borderGlow = {
@@ -56,6 +61,7 @@ export const Card = ({
     ouro: "hover:shadow-[0_0_20px_rgba(207,175,60,0.15)]",
     platina: "hover:shadow-[0_0_20px_rgba(181,181,181,0.15)]",
     diamante: "hover:shadow-[0_0_20px_rgba(77,196,215,0.15)]",
+    personalizado: "hover:shadow-[0_0_20px_rgba(77,196,215,0.15)]",
   }[type];
 
   const copyValue = () => {
@@ -64,7 +70,8 @@ export const Card = ({
       'prata': PRATA_PIX,
       'ouro': OURO_PIX,
       'platina': PLATINA_PIX,
-      'diamante': DIAMANTE_PIX
+      'diamante': DIAMANTE_PIX,
+      'personalizado': PERSONAL_PIX
     }[type]
 
     navigator.clipboard.writeText(valuePix);
@@ -150,3 +157,4 @@ const PRATA_PIX = '00020101021126870014br.gov.bcb.pix01362b1ebd32-7154-4520-8578
 const OURO_PIX = '00020126620014br.gov.bcb.pix0111391739038840225Casamento jessica e david5204000053039865406400.005802BR5925JESSICA KAROLINA GALINDO 6015PRESIDENTE PRUD62500512Casamento40050300017br.gov.bcb.brcode01051.0.06304CD6D'
 const PLATINA_PIX = '00020101021126870014br.gov.bcb.pix01362b1ebd32-7154-4520-8578-18e4920955bf0225Casamento Jessica e David5204000053039865406800.005802BR5911DAVID H ONO6013PRESIDENTE PR62070503***6304520A'
 const DIAMANTE_PIX = '00020126670014br.gov.bcb.pix0111391739038840230Casamento jessica e david 100052040000530398654071000.005802BR5925JESSICA KAROLINA GALINDO 6015PRESIDENTE PRUD62510513Casamento100050300017br.gov.bcb.brcode01051.0.0630422F5'
+const PERSONAL_PIX = '00020126620014br.gov.bcb.pix0111391739038840225Casamento Jessica e David5204000053039865802BR5925JESSICA KAROLINA GALINDO 6015PRESIDENTE PRUD62580520SAN2026012102022254750300017br.gov.bcb.brcode01051.0.06304CB62'

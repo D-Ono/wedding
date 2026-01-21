@@ -1,4 +1,4 @@
-import { Balloon, Cake, Camera, Check, MailX, PartyPopper, Shirt, VibrateOff } from "lucide-react"
+import { Balloon, Cake, Camera, Check, Church, MailX, Shirt, VibrateOff } from "lucide-react"
 import { ReactNode } from "react"
 
 const Information = ({ children, text, delay }: { children: ReactNode, text: string, delay: string }) => {
@@ -39,11 +39,14 @@ export const GeneralInfo = () => {
           <Information text="Convidado não convida!" delay="stagger-3">
             <MailX className="text-red-600" size={40} strokeWidth={2.5} />
           </Information>
-          <Information text="Participe da cerimônia" delay="stagger-4">
-            <PartyPopper className="text-purple-600" size={40} strokeWidth={2.5} />
+          <Information text="Participe da cerimônia na igreja" delay="stagger-4">
+            <Church className="text-purple-600" size={40} strokeWidth={2.5} />
           </Information>
           <Information text="Branco é a cor da noiva" delay="stagger-5">
-            <Shirt className="text-gray-300" size={40} strokeWidth={2.5} />
+            <Shirt className="text-gray-100" size={40} strokeWidth={2.5} />
+          </Information>
+          <Information text="Azul serenity é a cor das madrinhas" delay="stagger-5">
+            <Shirt className="text-blue-300" size={40} strokeWidth={2.5} />
           </Information>
         </div>
 
