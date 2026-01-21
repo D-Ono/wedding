@@ -8,21 +8,24 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="text-black w-full flex flex-col min-h-screen items-center justify-center bg-zinc-50 font-sans">
-      {/* <Header /> */}
-      <main className="flex min-h-screen w-full flex-col items-center gap-8 mb-8 sm:items-start justify-center">
+    <div className="w-full flex flex-col min-h-screen items-center bg-white">
+      <main className="flex min-h-screen w-full flex-col items-center">
         <Banner />
-        <div className="flex flex-col items-center w-full gap-8">
-          <GeneralInfo /> 
+
+        <div className="flex flex-col items-center w-full gap-16 md:gap-24 py-12">
+          <GeneralInfo />
           <SaveTheDate />
           <WeddingRegistry />
           <ConfirmAttendance />
           <Galery />
         </div>
       </main>
-      <footer>
-        <Image alt="Logo" src='/img/logo.png' width={100} height={100} /> 
-        <p className="text-center mb-8">Feito com 💕</p>
+
+      <footer className="w-full flex flex-col items-center py-12 mt-16 border-t border-gray-200/50">
+        <div className="opacity-80 hover:opacity-100 transition-opacity duration-300 mb-4">
+          <Image alt="Logo" src='/img/logo.png' width={80} height={80} className="drop-shadow-sm" />
+        </div>
+        <p className="text-center text-gray-600 text-sm">Feito com 💕</p>
       </footer>
     </div>
   );
